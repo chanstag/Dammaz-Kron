@@ -1,0 +1,17 @@
+## Features 
+ - Client for Users to Submit Ticket
+    - registration
+    - login
+    - page to submit ticket
+    - page to see current ticket
+ - Client for Employees
+    - registration
+    - login
+    - assign tickets
+    - tag tickets
+    - add/update/delete tickets
+ - Database schema
+    - Users
+    - Tickets
+    - Teams
+    - Products

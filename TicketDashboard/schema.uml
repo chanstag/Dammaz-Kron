@@ -1,0 +1,55 @@
+@startuml Dashboard Model
+
+entity Users {
+    * ID : number (Not Null, Unique)
+    --
+    * name : text
+    * Team : number <<FK>>
+    * permissions : Union (read, write, update) (Admin)
+
+}
+
+entity Tickets{
+    * ID : number (Not Null, Unique)
+    --
+    * Description
+    * Status (open, in progress, in review, closed)
+    current_user : number <<FK>>
+}
+
+entity Teams {
+    * ID
+    --
+    *GroupID 
+}
+
+entity Groups{
+    * ID : number (Not Null, Unique)
+    --
+    * Current_Project : number <<FK>>
+    * All_Projects : number
+    * 
+}
+
+entity Products{
+    * ID : number (Not Null, Unique)
+    --
+    * Owner : number <<FK>>
+    * Priviledge : singlevalue (read, write)
+    * Status : (In Dev, Legacy, Mature, Sunset, Obsolete) 
+}
+
+
+
+Users }o--o| Teams
+
+Teams |o--o{ Groups
+
+Products }o--o| Groups
+
+Tickets }o--o| Products
+
+
+
+
+@enduml
